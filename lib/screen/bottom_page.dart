@@ -3,6 +3,7 @@ import 'package:onlineshop/screen/explore_page.dart';
 import 'package:onlineshop/screen/home_page.dart';
 import 'package:onlineshop/screen/index-page.dart';
 import 'package:onlineshop/screen/shop_page.dart';
+import 'package:onlineshop/widget/custom_widget_page.dart';
 
 class BottomPage extends StatefulWidget {
   const BottomPage({Key? key}) : super(key: key);
@@ -63,7 +64,7 @@ class _BottomPageState extends State<BottomPage> {
                           color:
                           currentTab == 0 ? Colors.redAccent : Colors.black.withOpacity(.5),
                         ),
-                        Text("Home",style: TextStyle(color: currentTab == 0 ? Colors.redAccent : Colors.black.withOpacity(.5),))
+                        Text("Home",style: mystyleroboto(16, currentTab == 0 ? Colors.redAccent : Colors.black.withOpacity(.5),FontWeight.w500))
                       ],
                     ),
                   ),
@@ -83,7 +84,7 @@ class _BottomPageState extends State<BottomPage> {
                           color:
                           currentTab == 1 ? Colors.redAccent  : Colors.black.withOpacity(.5),
                         ),
-                        Text("Explore",style: TextStyle(color: currentTab == 1 ? Colors.redAccent : Colors.black.withOpacity(.5),))
+                        Text("Explore",style: mystyleroboto(16, currentTab == 1 ? Colors.redAccent : Colors.black.withOpacity(.5),FontWeight.w500))
                       ],
                     ),
                   ),
@@ -98,7 +99,7 @@ class _BottomPageState extends State<BottomPage> {
                     onPressed: () {
                       setState(() {
                         currentScreen = IndexPage();
-                        currentTab = 3;
+                        currentTab = 2;
                       });
                     },
                     child: Column(
@@ -107,9 +108,9 @@ class _BottomPageState extends State<BottomPage> {
                         Icon(
                           Icons.inbox,
                           color:
-                          currentTab == 3 ? Colors.redAccent  : Colors.black.withOpacity(.5),
+                          currentTab == 2 ? Colors.redAccent  : Colors.black.withOpacity(.5),
                         ),
-                        Text("Index",style: TextStyle(color: currentTab == 3 ? Colors.redAccent : Colors.black.withOpacity(.5)))
+                        Text("Index", style: mystyleroboto(16, currentTab == 2 ? Colors.redAccent : Colors.black.withOpacity(.5),FontWeight.w500))
                       ],
                     ),
                   ),
@@ -118,7 +119,7 @@ class _BottomPageState extends State<BottomPage> {
                     onPressed: () {
                       setState(() {
                         currentScreen = ShopPage();
-                        currentTab = 4;
+                        currentTab = 3;
                       });
                     },
                     child: Column(
@@ -127,9 +128,9 @@ class _BottomPageState extends State<BottomPage> {
                         Icon(
                           Icons.shop,
                           color:
-                          currentTab == 4 ? Colors.redAccent : Colors.black.withOpacity(.5),
+                          currentTab == 3 ? Colors.redAccent : Colors.black.withOpacity(.5),
                         ),
-                        Text("Shop",style: TextStyle(color: currentTab == 4 ? Colors.redAccent : Colors.black.withOpacity(.5)))
+                        Text("Shop",style: mystyleroboto(16, currentTab == 3 ? Colors.redAccent : Colors.black.withOpacity(.5),FontWeight.w500))
                       ],
                     ),
                   ),

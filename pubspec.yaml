@@ -39,6 +39,7 @@ dependencies:
   flutter_staggered_grid_view:
   http:
   get: ^4.6.5
+  google_fonts: ^4.0.4
 
 dev_dependencies:
   flutter_test:

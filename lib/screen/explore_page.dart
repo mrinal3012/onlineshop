@@ -5,6 +5,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:onlineshop/model/model_page.dart';
 import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
+import 'package:onlineshop/widget/custom_widget_page.dart';
 
 class ExplorePage extends StatefulWidget {
   const ExplorePage({Key? key}) : super(key: key);
@@ -139,13 +140,14 @@ class _ExplorePageState extends State<ExplorePage> {
                                                                       crossAxisAlignment:
                                                                       CrossAxisAlignment.start,
                                                                       children: [
-                                                                        Text(
-                                                                          "Saber Ali",
-                                                                          style: TextStyle(fontSize: 18),
+                                                                        FittedBox(
+                                                                          child: Text(
+                                                                            "${productModel!.products![index].brand}",
+                                                                            style: mystyleroboto(18,Colors.black,FontWeight.w800),),
                                                                         ),
                                                                         Spacer(),
-                                                                        Text("Dhaka, Bangladesh",
-                                                                            style: TextStyle(fontSize: 10)),
+                                                                        Text("${productModel!.products![index].category}",
+                                                                          style: mystyleroboto(15,Colors.black.withOpacity(.4),FontWeight.w500),),
                                                                       ],
                                                                     ),
                                                                   )),
