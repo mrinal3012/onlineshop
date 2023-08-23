@@ -122,8 +122,8 @@ class _ExplorePageState extends State<ExplorePage> {
                                                                   child:
                                                                   Container(
                                                                     decoration: BoxDecoration(
-                                                                        color:
-                                                                        Colors.pink,
+                                                                      image: DecorationImage(image: AssetImage("images/manicon.jpg"),fit: BoxFit.cover),
+
                                                                         borderRadius: BorderRadius.circular(12)),
                                                                   )),
                                                               SizedBox(
