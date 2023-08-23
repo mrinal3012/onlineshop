@@ -73,44 +73,44 @@ class _ExplorePageState extends State<ExplorePage> {
                             } else if (snapshot.data == null) {
                               return Text("data is null");
                             } else
-                              return GridView.custom(
-                                  gridDelegate: SliverQuiltedGridDelegate(
-                                      crossAxisCount: 15,
-                                      mainAxisSpacing: 2,
-                                      crossAxisSpacing: 2,
-                                      pattern: const [
-
-                                        QuiltedGridTile(4, 5),
-                                        QuiltedGridTile(4, 5),
-                                        QuiltedGridTile(4, 5),
-                                        QuiltedGridTile(8, 9),
-                                        QuiltedGridTile(4, 6),
-                                        QuiltedGridTile(4, 6),
-                                        QuiltedGridTile(4, 5),
-                                        QuiltedGridTile(4, 5),
-                                        QuiltedGridTile(4, 5),
-                                      ]),
-                                  childrenDelegate: SliverChildBuilderDelegate(
-                                      (context, index) => Padding(
-                                            padding: const EdgeInsets.all(2.0),
-                                            child: InkWell(
-                                              onTap: () {
-                                                ShowAlertDialog(context);
-                                              },
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                    color: Colors.teal,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            12),
-                                                    image: DecorationImage(
-                                                      image: NetworkImage(
-                                                          "${productProvider.productModel!.products![index].images![0]}"),
-                                                      fit: BoxFit.cover,
-                                                    )),
-                                              ),
-                                            ),
-                                          )));
+                              return GridView.builder(
+                                itemCount: productProvider
+                                    .productModel!.products!.length,
+                                gridDelegate: SliverQuiltedGridDelegate(
+                                    crossAxisCount: 15,
+                                    mainAxisSpacing: 2,
+                                    crossAxisSpacing: 2,
+                                    pattern: const [
+                                      QuiltedGridTile(4, 5),
+                                      QuiltedGridTile(4, 5),
+                                      QuiltedGridTile(4, 5),
+                                      QuiltedGridTile(8, 9),
+                                      QuiltedGridTile(4, 6),
+                                      QuiltedGridTile(4, 6),
+                                      QuiltedGridTile(4, 5),
+                                      QuiltedGridTile(4, 5),
+                                      QuiltedGridTile(4, 5),
+                                    ]),
+                                itemBuilder: (context, index) => Padding(
+                                  padding: const EdgeInsets.all(3.0),
+                                  child: InkWell(
+                                    onTap: () {
+                                      ShowAlertDialog(context);
+                                    },
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          color: Colors.teal,
+                                          borderRadius:
+                                              BorderRadius.circular(12),
+                                          image: DecorationImage(
+                                            image: NetworkImage(
+                                                "${productProvider.productModel!.products![index].images![0]}"),
+                                            fit: BoxFit.cover,
+                                          )),
+                                    ),
+                                  ),
+                                ),
+                              );
                           },
                         ),
                       )),
